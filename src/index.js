@@ -6,11 +6,12 @@ import logger from 'redux-logger'
 import './index.css';
 import App from './containers/App';
 import 'tachyons'; 
-import { searchRobots } from './reducers';
+import { searchRobots, requestRobots } from './reducers';
 
 const store = configureStore({
     reducer: {
-        searchRobots
+        searchRobots: searchRobots,
+        requestRobots: requestRobots
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
