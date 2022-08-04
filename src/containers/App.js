@@ -4,6 +4,7 @@ import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from '../components/ErrorBoundary';
+import Header from '../components/Header';
 import './App.css';
 import { requestRobots, setSearchField } from '../actions';
 
@@ -38,10 +39,9 @@ class App extends Component {
       <h1>Loading</h1> :
       (
         <div className='tc'>
-          <header className='w-100 ph3 pv3 pv4-ns ph4-m ph5-l'>
-            <h1 className='f1'>RoboFriends</h1>
+          <Header>
             <SearchBox searchChange={onSearchChange}/>
-          </header>
+          </Header>
           <Scroll>
             <ErrorBoundary>
               <CardList robots={filteredRobots} />
